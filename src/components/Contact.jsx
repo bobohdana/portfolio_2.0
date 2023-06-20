@@ -16,8 +16,6 @@ const useStyles = makeStyles({
   },
 })
 
-const TOKEN = '6054865165:AAFMeSDKyztDTiZYFBHbUxux-N5Tg38f6UM'
-
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
@@ -67,7 +65,7 @@ export default function Contact () {
   }
 
   const sendMessage = (text) => {
-    const url = `https://api.telegram.org/bot${TOKEN}/sendMessage`
+    const url = `https://api.telegram.org/bot6054865165:AAFMeSDKyztDTiZYFBHbUxux-N5Tg38f6UM/sendMessage`
 
     const obj = {
       chat_id: '264639255',
@@ -104,7 +102,7 @@ export default function Contact () {
             name={'message'}
             component={MUIFormikTextField}
             label={'Message'}
-            minRows={7}
+            minRows={6}
             multiline
           />
 
