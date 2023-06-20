@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import { Outlet, Navigate } from "react-router-dom";
+
+import { makeStyles } from "@mui/styles";
+
+import Header from "./components/Header";
+import mark from  "./mark.png";
+
+const useStyles = makeStyles({
+  content: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: '120px 80px',
+  },
+  footer: {
+    position: 'fixed',
+    bottom: 0,
+    height: 90,
+    width: '100%',
+    backgroundColor: '#fff',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+})
 
 function App() {
+  const classes = useStyles()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+
+      <div className={classes.content}>
+        <Outlet />
+      </div>
+
+      <div className={classes.footer}><img src={mark} alt="Mark"/></div>
+
+      <Navigate to="/home" />
+    </>
   );
 }
 
