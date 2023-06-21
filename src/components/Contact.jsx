@@ -6,13 +6,15 @@ import * as Yup from "yup";
 import { makeStyles } from "@mui/styles";
 import { TextField, Button } from "@mui/material";
 
+import cn from "classnames";
+
 const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 700,
+    width: 900,
   },
 })
 
@@ -85,7 +87,7 @@ export default function Contact () {
         validationSchema={SignupSchema}
         onSubmit={handleSubmit}
       >
-        <Form className={classes.root}>
+        <Form className={cn(classes.root, "form_media")}>
           <h3>CONTACT FORM</h3>
 
           <Field

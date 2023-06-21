@@ -1,8 +1,9 @@
 import React from "react";
 
 import { makeStyles } from "@mui/styles";
+import cn from "classnames";
 
-import avatar from "../avatar.jpg";
+import avatar from "../assets/avatar.jpg";
 
 import Email from "./Email";
 import Networks from "./Networks";
@@ -26,8 +27,8 @@ export default function Home() {
   const classes = useStyles()
 
   return (
-    <>
-      <div className={classes.intro}>
+    <div className="home_media">
+      <div className={cn(classes.intro, "intro_media")}>
         <h2>Hello, I am Bohdana Soroka</h2>
         <p>I am a Frontend developer. I am a hardworking, punctual and responsible person. I am looking for a company where I will be able to develop and improve my professional knowledge.</p>
 
@@ -39,16 +40,16 @@ export default function Home() {
         ))}
       </div>
 
-      <div className={classes.avatarContainer}>
+      <div className={cn(classes.avatarContainer, "avatar_media")}>
         <img src={avatar} alt="avatar" className={classes.avatar} />
       </div>
-    </>
+    </div>
   )
 }
 
 const useStyles = makeStyles({
   intro: {
-    width: '60%',
+    width: '55%',
     marginRight: 30,
   },
   content: {
@@ -60,9 +61,11 @@ const useStyles = makeStyles({
   },
   avatarContainer: {
     width: '35%',
-    height: 500,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   avatar: {
-    maxHeight: 500,
+    width: '100%',
   },
 })

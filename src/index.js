@@ -6,7 +6,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import './index.css';
+import './styles/index.css';
+import './styles/media.css';
 
 import App from './App';
 import { ROUTES } from './routes';

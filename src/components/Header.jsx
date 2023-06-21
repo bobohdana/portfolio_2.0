@@ -2,8 +2,11 @@ import React from "react";
 
 import { NavLink, Link } from "react-router-dom";
 
-import { Button, ButtonGroup } from "@mui/material";
+import { Button, IconButton, ButtonGroup } from "@mui/material";
+import { Menu, MenuOpen } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
+
+import cn from "classnames";
 
 import { ROUTES } from "../routes";
 import { MAIN_COLOR } from "../constants";
@@ -15,10 +18,13 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    height: 60,
+    height: 100,
     width: '100%',
     backgroundColor: '#fff',
     borderBottom: '1px solid #ccc',
+  },
+  logo: {
+    fontSize: '1.5rem',
   },
   mainColor: {
     color: MAIN_COLOR,
@@ -27,26 +33,45 @@ const useStyles = makeStyles({
 
 export default function Header() {
   const classes = useStyles()
+  const [isMenuOpen, setIsMenuOpen] = React.useState(true)
+
+  const changeMenuVisibility = () => 
+    setIsMenuOpen(!isMenuOpen)
 
   return (
-    <div className={classes.root}>
+    <div className={cn(classes.root, "header_media")}>
       <Link to={'home'}>
-        <h1>Bohdana<span className={classes.mainColor}>.</span></h1>
+        <h1 className={cn(classes.logo, "logo_media")}>
+          Bohdana<span className={classes.mainColor}>.</span>
+        </h1>
       </Link>
 
-      <ButtonGroup variant="string">
-        {ROUTES.map((nav) => (
-          <NavLink
-            to={nav.key}
-            key={nav.key}
-            className={({ isActive }) =>
-              isActive ? classes.mainColor : ""
-            }
-          >
-            <Button>{nav.text}</Button>
-          </NavLink>
-        ))}
-      </ButtonGroup>
+      <IconButton
+        size="large"
+        className="menuBtn"
+        onClick={changeMenuVisibility}
+      >
+        {isMenuOpen ? <MenuOpen /> : <Menu />}
+      </IconButton>
+
+      {isMenuOpen && (
+        <ButtonGroup
+          variant="string"
+          className="nav_media"
+        >
+          {ROUTES.map((nav) => (
+            <NavLink
+              to={nav.key}
+              key={nav.key}
+              className={({ isActive }) =>
+                isActive ? classes.mainColor : ""
+              }
+            >
+              <Button fullWidth>{nav.text}</Button>
+            </NavLink>
+          ))}
+        </ButtonGroup>
+      )}
     </div>
   )
 }
