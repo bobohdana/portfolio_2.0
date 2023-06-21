@@ -38,7 +38,7 @@ function App() {
 
       <div className={classes.footer}><img src={mark} alt="Mark"/></div>
 
-      <Navigate to="/home" />
+      <Navigate to="/portfolio_2.0/home" />
     </>
   );
 }

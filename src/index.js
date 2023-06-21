@@ -14,7 +14,7 @@ import { ROUTES } from './routes';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/portfolio_2.0",
     element: <App />,
     children: ROUTES.map(nav => ({
       path: nav.key,
