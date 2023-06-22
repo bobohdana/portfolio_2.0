@@ -16,6 +16,9 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
   },
+  job: {
+    margin: 0,
+  }
 })
 
 export default function Experience() {
@@ -34,17 +37,23 @@ export default function Experience() {
         <div>
           <div className={classes.experience}>
             <CheckIcon />
-            Code Generation Software 2021-2022
-            <a href="https://www.linkedin.com/company/cgs-team/" target="_blank"><LinkedIn /></a>
+            <p className={classes.job}>
+              Code Generation Software 2021-2022
+              <a href="https://www.linkedin.com/company/cgs-team/" target="_blank"><LinkedIn fontSize="small" /></a>
+            </p>
           </div>
           <div className={classes.experience}>
             <CheckIcon />
-            The Shelf 2021-2023
-            <a href="https://www.linkedin.com/company/the-shelf/" target="_blank"><LinkedIn /></a>
+            <p className={classes.job}>
+              The Shelf 2021-2023
+              <a href="https://www.linkedin.com/company/the-shelf/" target="_blank"><LinkedIn fontSize="small" /></a>
+            </p>
           </div>
           <div className={classes.experience}>
             <CheckIcon />
-            Freelancing on Upwork since May, 2023
+            <p className={classes.job}>
+              Freelancing on Upwork since May, 2023
+            </p>
           </div>
         </div>
       </div>
