@@ -33,7 +33,7 @@ export default function Experience() {
         Almost 1.5 years I was creating landings and different simple projects using only HTML, CSS and JavaScript. </p>
       
       <div>
-        <h3>I've been starting to work as a React Frontend developer since September, 2021. </h3>
+        <h3>I've been working as a React Frontend developer since September, 2021. </h3>
         <div>
           <div className={classes.experience}>
             <CheckIcon />

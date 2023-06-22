@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
+  Navigate,
 } from "react-router-dom";
 
 import './styles/index.css';
@@ -17,10 +18,13 @@ const router = createBrowserRouter([
   {
     path: "/portfolio_2.0",
     element: <App />,
-    children: ROUTES.map(nav => ({
-      path: nav.key,
-      element: <nav.Component />,
-    }))
+    children: [
+      { index: true, element: <Navigate to="/portfolio_2.0/home" replace /> },
+      ...ROUTES.map(nav => ({
+        path: nav.key,
+        element: <nav.Component />,
+      }))
+    ]
   },
 ]);
 

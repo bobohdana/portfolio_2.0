@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Outlet, Navigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 import { makeStyles } from "@mui/styles";
 import cn from "classnames";
@@ -37,8 +37,6 @@ function App() {
       </div>
 
       <div className={cn(classes.footer, "footer_media")}><img src={mark} alt="Mark"/></div>
-
-      <Navigate to="/portfolio_2.0/home" />
     </>
   );
 }
