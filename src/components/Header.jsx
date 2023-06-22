@@ -35,6 +35,16 @@ export default function Header() {
   const classes = useStyles()
   const [isMenuOpen, setIsMenuOpen] = React.useState(true)
 
+  const closeMenu = () => {
+    if (document.documentElement.clientWidth < 801) {
+      setIsMenuOpen(false)
+    }
+  }
+
+  React.useEffect(() => {
+    closeMenu()
+  }, [])
+
   const changeMenuVisibility = () => 
     setIsMenuOpen(!isMenuOpen)
 
@@ -51,7 +61,7 @@ export default function Header() {
         className="menuBtn"
         onClick={changeMenuVisibility}
       >
-        {isMenuOpen ? <MenuOpen /> : <Menu />}
+        {isMenuOpen ? <MenuOpen fontSize="large" /> : <Menu fontSize="large" />}
       </IconButton>
 
       {isMenuOpen && (
@@ -66,6 +76,7 @@ export default function Header() {
               className={({ isActive }) =>
                 isActive ? classes.mainColor : ""
               }
+              onClick={closeMenu}
             >
               <Button fullWidth>{nav.text}</Button>
             </NavLink>

@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   },
 })
 
-const CheckIcon = withStyles({
+export const CheckIcon = withStyles({
   root: {
     color: '#00a13b',
     margin: '0 .5rem 0 4.5rem',
