@@ -28,7 +28,7 @@ export default function Experience() {
     <div>
       <p>This <a href="https://github.com/bobohdana/portfolio_2.0" target="_blank">portfolio <GitHub fontSize="small" /></a> is a SPA app that is created by me using React (React Hooks),
         React Router, Formik and MaterialUI as a library for design. Also I use Telegram Bot
-        in order to handle <Link to="/portfolio_2.0/contact" className={classes.link}>Contact Form</Link>.</p>
+        in order to handle <Link to="/contact" className={classes.link}>Contact Form</Link>.</p>
       <p>My experience started in 2019 after completing Frontend Developer courses.
         Almost 1.5 years I was creating landings and different simple projects using only HTML, CSS and JavaScript. </p>
       

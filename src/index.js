@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
   Navigate,
 } from "react-router-dom";
@@ -14,12 +14,12 @@ import App from './App';
 import { ROUTES } from './routes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "/portfolio_2.0",
+    path: "/",
     element: <App />,
     children: [
-      { index: true, element: <Navigate to="/portfolio_2.0/home" replace /> },
+      { index: true, element: <Navigate to="home" replace /> },
       ...ROUTES.map(nav => ({
         path: nav.key,
         element: <nav.Component />,
