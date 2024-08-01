@@ -52,6 +52,13 @@ export default function Experience() {
           <div className={classes.experience}>
             <CheckIcon />
             <p className={classes.job}>
+              WIX since September, 2023
+              <a href="https://www.linkedin.com/company/wix-com" target="_blank"><LinkedIn fontSize="small" /></a>
+            </p>
+          </div>
+          <div className={classes.experience}>
+            <CheckIcon />
+            <p className={classes.job}>
               Freelancing on Upwork since May, 2023
             </p>
           </div>
